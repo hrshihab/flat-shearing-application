@@ -25,7 +25,7 @@ const globalErrorHandler = (
     message = err.message;
     errorDetails = err;
   }
-  res.status(INTERNAL_SERVER_ERROR).json({
+  res.status(statusCode).json({
     success: false,
     message: message,
     errorDetails: errorDetails || null || undefined,
