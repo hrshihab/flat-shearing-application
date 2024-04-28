@@ -8,3 +8,9 @@ export type TUser = {
   created_at: Date;
   updated_at: Date;
 };
+
+export type TUserProfile = {
+  bio?: string;
+  profession?: string;
+  address?: string;
+};

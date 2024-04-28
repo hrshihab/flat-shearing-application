@@ -11,6 +11,15 @@ const userCreateValidationSchema = z.object({
   }),
 });
 
+const userUpdateValidationSchema = z.object({
+  body: z.object({
+    bio: z.string().optional(),
+    profession: z.string().optional(),
+    address: z.string().optional(),
+  }),
+});
+
 export const userValidation = {
   userCreateValidationSchema,
+  userUpdateValidationSchema,
 };

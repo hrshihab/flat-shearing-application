@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from "express";
 import ApiError from "../errors/ApiError";
 import httpStatus from "http-status";
 import { jwtHelper } from "../../helper/jwtHelper";
-import { Secret } from "jsonwebtoken";
+import { JwtPayload, Secret } from "jsonwebtoken";
 import config from "../../config";
 
 const auth = () => {
@@ -20,7 +20,7 @@ const auth = () => {
         token,
         config.jwt.jwt_secret as Secret
       );
-      req.user = verifiedUser;
+      req.user = verifiedUser as JwtPayload;
       next();
     } catch (error) {
       next(error);

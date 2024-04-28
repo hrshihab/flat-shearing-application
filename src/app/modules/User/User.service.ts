@@ -1,6 +1,6 @@
 import { Prisma, PrismaClient } from "@prisma/client";
 import bcrypt from "bcrypt";
-import { TUser } from "./User.interface";
+import { TUser, TUserProfile } from "./User.interface";
 import ApiError from "../../errors/ApiError";
 import httpStatus from "http-status";
 
@@ -46,7 +46,22 @@ const createUser = async (payload: TUser) => {
     throw new ApiError(httpStatus.BAD_REQUEST, "User registration failed");
   }
 };
+const getUserProfile = async () => {
+  const result = await prisma.userProfile.findMany();
+  return result;
+};
+
+const updateUserProfile = async (userId: string, payload: TUserProfile) => {
+  //console.log(userId, payload);
+  const result = await prisma.userProfile.update({
+    where: { userId: userId },
+    data: payload,
+  });
+  return result;
+};
 
 export const userService = {
   createUser,
+  getUserProfile,
+  updateUserProfile,
 };

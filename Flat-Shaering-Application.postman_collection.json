@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "d1ba38ef-1258-4028-b37b-4712fd79e6c3",
+		"name": "Flat-Shaering-Application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31300739"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "create-user",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "flat",
+			"item": [
+				{
+					"name": "create-flat",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"squareFeet\": 1200,\r\n    \"totalBedrooms\": 2,\r\n    \r\n    \"utilitiesDescription\": \"Includes water and electricity\",\r\n    \"location\": \"123 Main Street, Cityville\",\r\n    \"description\": \"Cozy apartment with ample natural light and modern amenities.\",\r\n    \"rent\": 1500,\r\n    \"advanceAmount\": 2000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{flat-shearing}}/flats",
+							"host": [
+								"{{flat-shearing}}"
+							],
+							"path": [
+								"flats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-flats",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{flat-shearing}}/flats?searchTerm=Dhaka",
+							"host": [
+								"{{flat-shearing}}"
+							],
+							"path": [
+								"flats"
+							],
+							"query": [
+								{
+									"key": "utilitiesDescription",
+									"value": "UD",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "sdg",
+									"disabled": true
+								},
+								{
+									"key": "searchTerm",
+									"value": "Dhaka"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
