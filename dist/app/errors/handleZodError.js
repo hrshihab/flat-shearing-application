@@ -12,7 +12,9 @@ const handleZodError = (error) => {
     return {
         statusCode,
         message: message,
-        errorDetails: errorMessage,
+        errorDetails: {
+            issues: errorMessage,
+        }, // Add type assertion here
     };
 };
 exports.default = handleZodError;

@@ -15,7 +15,9 @@ const handleZodError = (error: ZodError): TGenericErrorResponse => {
   return {
     statusCode,
     message: message,
-    errorDetails: errorMessage,
+    errorDetails: {
+      issues: errorMessage,
+    } as unknown as TErrorSources, // Add type assertion here
   };
 };
 
