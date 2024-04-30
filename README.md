@@ -95,7 +95,5 @@ Contributions are welcome! If you'd like to contribute to the project, please fo
 - Test your changes thoroughly.
 - Create a pull request with a clear description of your changes.
 
-## **License**
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 ```
