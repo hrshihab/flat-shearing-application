@@ -46,8 +46,10 @@ const createUser = async (payload: TUser) => {
     throw new ApiError(httpStatus.BAD_REQUEST, "User registration failed");
   }
 };
-const getUserProfile = async () => {
-  const result = await prisma.userProfile.findMany();
+const getUserProfile = async (userId: string) => {
+  const result = await prisma.userProfile.findUnique({
+    where: { userId: userId },
+  });
   return result;
 };
 

@@ -3,7 +3,7 @@ import jwt, { JwtPayload, Secret } from "jsonwebtoken";
 
 // Generate an access token
 export const generateToken = (
-  payload: { email: string },
+  payload: { email: string , id:string },
   secret: string,
   expiresIn: string
 ) => {

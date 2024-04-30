@@ -18,7 +18,8 @@ const createUser = catchAsync(async (req: Request, res: Response) => {
 });
 
 const getUserProfile = catchAsync(async (req: Request, res: Response) => {
-  const result = await userService.getUserProfile();
+  const userId = req.user.id;
+  const result = await userService.getUserProfile(userId);
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
