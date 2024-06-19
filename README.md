@@ -1,5 +1,3 @@
-
-```markdown
 ## Flat Share Application
 
 Welcome to the Flat Share Application! This web application helps users find and share flats for rent, making the process of finding a suitable living space hassle-free.
@@ -96,4 +94,3 @@ Contributions are welcome! If you'd like to contribute to the project, please fo
 - Create a pull request with a clear description of your changes.
 
 
-```
